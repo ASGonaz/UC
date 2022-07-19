@@ -20,9 +20,9 @@ const All = () => {
   return (
 	<>
 	<div className="container">
-		<div className="row">
-			<div className="col-md-8">
-				<div className="holdAll">		
+		<div className="row d-flex justify-content-center ">
+			<div className="col-md-8  ">
+				<div className="holdAll py-5 ">		
 				{appearMsgDiv===true && 
 					<div className="alert alert-danger alert-dismissible fade show" role="alert">
   <strong><i className="fa fa-check"></i> Deleted Successfully</strong> 

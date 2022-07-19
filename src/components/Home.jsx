@@ -57,16 +57,18 @@ const Home = () => {
 	<>
 
 	<div className="container">
-		<div className="row">
-			<div className="col-md-6">
-				<div className="allThings">
+		<div className="row d-flex justify-content-center ">
+			<div className="col-md-6 ">
+				<div className="allThings py-5">
 					{appearDiv===true && 
 					<div className="alert alert-success alert-dismissible fade show" role="alert">
   <strong><i className="fa fa-check"></i> Saved Successfully</strong> 
   <button type="button" onClick={()=>setappearDiv(false)} className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 }
+<label class="form-label ">Choose UC</label>
 	<div className="input-group mb-3">
+		
 			<select onChange={()=>{setappear(false); setappear2(false)} } ref={UCCountity} className="form-select" aria-label="Default select example">
 			       <option value="0.25">0.25</option>
 					<option value="0.35">0.35</option>
@@ -96,21 +98,24 @@ const Home = () => {
 					<option value="45">45</option>
 					<option value="50">50</option>
 			</select>
-  <button  onClick={calcShouldBay} className="btn btn-outline-secondary" type="button" ><i className="fa fa-check"></i></button>
+  <button  onClick={calcShouldBay} className="btn btn-success" type="button" >Choose</button>
 </div>
 		<div className="sholdbayresult">
-			{appear ===true && <> <div> You Should Pay {storeValue} EGP</div> <div className="input-group mb-3">
+			{appear ===true && <> <div className='py-4 text-center'> You Should Pay : <span className='fw-bold'> {storeValue}</span> EGP</div> <div className="input-group mb-3">
   <input ref={YouWantInput} type="number" className="form-control" placeholder="Enter You want from Customer "/>
-  <button onClick={calcArba7} className="btn btn-outline-secondary" type="button" id="button-addon2"><i className="fa fa-check"></i></button>
+  <button onClick={calcArba7} className="btn btn-primary" type="button" id="button-addon2">Determine</button>
 </div></> } 
 		</div>
-		<div className="arba7Result">
+		<div className="arba7Result  py2">
 			{appear2 ===true &&  <>
-			<div>Date {arba7Value.time}</div>
-			<div>You Want From Customer : {arba7Value.youWant} EGP</div>
-			<div>You Should Pay : {arba7Value.youShould} EGP</div>
-			<div>Your Profit : {arba7Value.profit} EGP</div>
-			<button onClick={()=>saveInLS(arba7Value)} className="btn btn-primary">save</button>
+			<ul>
+				<li><div >Date : <span>{arba7Value.time}</span> </div></li>
+			<li><div >You Want From Customer : <span> {arba7Value.youWant} </span>EGP</div></li>
+			<li><div >You Should Pay : <span>{arba7Value.youShould}</span>  EGP</div></li>
+			<li> <div >Your Profit : <span>{arba7Value.profit} </span> EGP</div></li>
+			
+			</ul>
+			<button onClick={()=>saveInLS(arba7Value)} className="btn w-100 btn-warning fw-bold">Save</button>
 			</>}
 		</div>
 </div>

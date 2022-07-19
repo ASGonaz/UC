@@ -1,0 +1,30 @@
+            /*header*/
+            
+            .navbar-brand {
+                font-size: 40px !important;
+                color: gold;
+                -webkit-text-stroke: 1px black;
+                /* width and color */
+            }
+            
+            .navbar-toggler {
+                padding: 0 !important;
+                padding-top: 14px !important;
+            }
+            
+            .navbar-toggler-icon {
+                font-size: 25px !important;
+            }
+            
+            .nav-item a {
+                color: black;
+                font-weight: bold;
+            }
+            
+            .arba7Result div span {
+                font-weight: bold;
+            }
+            
+            .arba7Result ul {
+                list-style: square;
+            }
