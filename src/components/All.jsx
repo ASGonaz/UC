@@ -18,11 +18,12 @@ const All = () => {
 		setappearMsgDiv(true)
 	}
   return (
-	<>
+	<div className='mainHome'>
 	<div className="container">
 		<div className="row d-flex justify-content-center ">
 			<div className="col-md-8  ">
-				<div className="holdAll py-5 ">		
+				<div className="holdAll  ">	
+				<h2><img src="/assets/images/Home/uc.webp" alt="" /> All Saved Transactions</h2>	
 				{appearMsgDiv===true && 
 					<div className="alert alert-danger alert-dismissible fade show" role="alert">
   <strong><i className="fa fa-check"></i> Deleted Successfully</strong> 
@@ -55,7 +56,7 @@ const All = () => {
       <td>{oneTransction.youShould} EGP</td>
       <td>{oneTransction.youWant} EGP</td>
       <td>{oneTransction.profit} EGP</td>
-	  <td><button type="button" onClick={()=>deleteOneTransFunc(oneTransction.id)} class="btn btn-danger">Delete</button></td>
+	  <td><button type="button" onClick={()=>deleteOneTransFunc(oneTransction.id)} class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
     </tr>)}) }
 {arrayOfAllTransactions.length > 0 &&   <tr>
       <th >Total</th>
@@ -71,7 +72,7 @@ const All = () => {
 		</div>
 		</div>
 	</div>
-	</>
+	</div>
   )
 }
 
