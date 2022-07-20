@@ -6,8 +6,10 @@ const All = () => {
 	let totalYouShould =0;
 	let totalYouWant =0;
 	const [appearMsgDiv,setappearMsgDiv] = useState(false);
-	let arrayOfAllTransactions = JSON.parse(localStorage.getItem("trans"));
-	
+if(localStorage.getItem("trans") == undefined){
+	window.location.href = "/";
+}
+   let arrayOfAllTransactions = JSON.parse(localStorage.getItem("trans"));
 	const deleteOneTransFunc=(transId)=>{
 	
 		const arrayAfterDel = arrayOfAllTransactions.filter((oneT)=> oneT.id !== transId)
