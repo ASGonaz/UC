@@ -1,8 +1,8 @@
  Doc of  ( UC Transactions Helper )
 -date:
-  7/20/2022
+  7/21/2022
 -description:
-  ~this website help sallers who sellig a UC in PUBG game in "egypt" ,
+  ~this website help sallers who sellig a UC in PUBG game  ,
   ~by it sallers can know what should are paying  to mather company to buy a UC,
   ~and know what the profits when selling this UC to players,
   ~and by this website sallers can store all data about this transctions

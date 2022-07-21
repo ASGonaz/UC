@@ -2,12 +2,6 @@ import React, { useRef } from 'react'
 import { useState } from 'react';
 
 const Home = () => {
-
-
-
-
-//...
-
 	let current = new Date();
 	const [storeValue,setStoreValue] = useState(null);
 	const [appear,setappear] = useState(false);
@@ -16,13 +10,32 @@ const Home = () => {
 	const UCCountity = useRef(null);
 	const [arba7Value,setArba7Value] = useState({});
 	const YouWantInput = useRef(null);
+	const dollerPriceInp = useRef(null);
+	const [dollerPrice,setdollerPrice] = useState(null);
+	const [appearAll,setappearAll] = useState(false);
+	const determineDollerPrice=()=>{
+		if(dollerPriceInp.current.value ==""){
+		alert("You Should Enter Doller Price")	
+		}else if(dollerPriceInp.current.value>10000000){
+			alert(alert("Value Enterd Is Long...")	);
+		}else{
+			setdollerPrice(dollerPriceInp.current.value);
+			setappearAll(true);
+		}
+			
+	}
 	const calcShouldBay =() =>{
 		const UCC=UCCountity.current.value;
 		if(UCC === "Choose UC"){
 			
 		}else{
-			setStoreValue(UCC * 17.5 );
-			setappear(true);
+			if(dollerPrice==null){
+				
+			}else{
+				setStoreValue(UCC * dollerPrice );
+				setappear(true);
+			}
+		
 		
 		}
 	}
@@ -75,6 +88,12 @@ const Home = () => {
   <button type="button" onClick={()=>setappearDiv(false)} className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 }
+<div className="input-group mb-3">
+{appearAll==true &&<i style={{color:"green",padding:"10px"}} className=" fa fa-check-circle"></i>}
+  <input onChange={()=>{setappearAll(false);setappear(false); setappear2(false)} } ref={dollerPriceInp} type="number" className="form-control" placeholder="Enter Doller Price"/>
+  <button  onClick={determineDollerPrice} style={{backgroundColor:"#6242FC"}} className="btn btn-primary" type="button" id="button-addon2">$</button>
+</div>
+
 	<div className="input-group mb-3">
 		
 			<select onChange={()=>{setappear(false); setappear2(false)} } ref={UCCountity} className="form-select" aria-label="Default select example">
@@ -87,7 +106,7 @@ const Home = () => {
 					<option value="3">3</option>
 					<option value="4">4</option>
 					<option value="5">5</option>
-					<option value="5.53">5.53</option>
+					<option value="5.35">5.35</option>
 					<option value="6">6</option>
 					<option value="8">8</option>
 					<option value="9">9</option>
@@ -127,7 +146,9 @@ const Home = () => {
 			<button onClick={()=>saveInLS(arba7Value)} className="btn savebtn btn-dark w-100  fw-bold"><i class="fa fa-bookmark"></i> Save</button>
 			</>}
 		</div>
+
 </div>
+			
 </div>
 </div>
 	</div>

@@ -40,7 +40,7 @@
         /********************/
         
         .mainHome {
-            height: calc(100vh - 10px);
+            height: 110vh;
             background: url('../public/assets/images/Home/bg2.png') center center/cover;
         }
         
