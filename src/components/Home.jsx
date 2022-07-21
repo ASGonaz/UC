@@ -17,7 +17,7 @@ const Home = () => {
 		if(dollerPriceInp.current.value ==""){
 		alert("You Should Enter Doller Price")	
 		}else if(dollerPriceInp.current.value>10000000){
-			alert(alert("Value Enterd Is Long...")	);
+			alert("Value Enterd Is Long..."	);
 		}else{
 			setdollerPrice(dollerPriceInp.current.value);
 			setappearAll(true);
