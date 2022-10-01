@@ -19,6 +19,15 @@ if(localStorage.getItem("trans") == undefined){
 		document.location.reload(true);
 		setappearMsgDiv(true)
 	}
+	const deleteAllTransFunc=()=>{
+		//localStorage.removeItem("trans");
+		
+		localStorage.setItem("trans","[]");
+		console.log("delete All success");
+		
+		document.location.reload(true);
+		setappearMsgDiv(true)
+	}
   return (
 	<div className='mainHome'>
 	<div className="container">
@@ -36,6 +45,7 @@ if(localStorage.getItem("trans") == undefined){
 { arrayOfAllTransactions.length <1 ? <div  className=" alert alert-info text-center " role="alert">
   No Transactions Saved
 </div> : 		<div className="holdTable"style={{overflowX:"scroll"}}>
+{arrayOfAllTransactions.length > 0 && <button type="button" class="btn btn-dark"onClick={()=>deleteAllTransFunc()}><i class="fa fa-trash"></i> Delete All </button>  }
 			<table className="table">
   <thead>
     <tr>
